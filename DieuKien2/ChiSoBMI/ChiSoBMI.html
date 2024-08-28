@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Chỉ Số BMI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tính Chỉ Số BMI</h1>
+    <label for="weight">Cân nặng (kg):</label>
+    <input type="number" id="weight" placeholder="Nhập cân nặng"><br>
+    
+    <label for="height">Chiều cao (cm):</label>
+    <input type="number" id="height" placeholder="Nhập chiều cao"><br>
+    
+    <button onclick="calculateBMI()">Tính BMI</button>
+    
+    <div id="result"></div>
+    
+    <script>
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value) / 100; // Convert cm to meters
+            
+            if (weight > 0 && height > 0) {
+                const bmi = (weight / (height * height)).toFixed(2);
+                let evaluation;
+                
+                if (bmi < 18) {
+                    evaluation = "Underweight";
+                } else if (bmi < 25.0) {
+                    evaluation = "Normal";
+                } else if (bmi < 30.0) {
+                    evaluation = "Overweight";
+                } else {
+                    evaluation = "Obese";
+                }
+
+                document.getElementById('result').innerText = `Chỉ số BMI của bạn là: ${bmi} - ${evaluation}`;
+            } else {
+                document.getElementById('result').innerText = 'Vui lòng nhập đúng cân nặng và chiều cao!';
+            }
+        }
+    </script>
+</body>
+</html>

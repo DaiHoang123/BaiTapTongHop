@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự kiện click chuột</title>
+
+    <style>
+        button{
+            background-color: rgb(92, 92, 92);
+            color: white;
+            width: 60px;
+            height: 30px;
+            font-weight: 700;
+        }
+
+        #image{
+            width: 100px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .img_box{
+            width: 600px;
+            height: 600px;
+            background-color: rgb(187, 187, 187);
+            margin-bottom: 20px;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="img_box">
+            <img src=".\file.png" alt="image" id="image">
+        </div>
+        <div style="display: flex;flex-direction: column;align-items: center;">
+
+            <button style="margin-bottom: 10px;" onclick="moveUp()">Up</button>
+
+            <div style="display: flex;justify-content: space-between;">
+                <button style="margin-right: 30px;" onclick="moveLeft()">Left</button>
+                <button style="margin-left: 30px;" onclick="moveRight()">Right</button>
+            </div>
+
+            <button style="margin-top: 10px;" onclick="moveDown()">Down</button>
+        </div>
+    </div>
+    
+    <script>
+        let posTop = 50;
+        let posLeft = 50;
+        let img = document.getElementById("image");
+
+        const updatePosition = () => {
+            img.style.top = `${posTop}%`
+            img.style.left = `${posLeft}%`
+        }
+
+        const moveUp = () => {
+            posTop -= 1;
+            updatePosition();
+        }
+        const moveDown = () => {
+            posTop += 1;
+            updatePosition();
+        }
+        const moveLeft = () => {
+            posLeft -= 1;
+            updatePosition();
+        }
+        const moveRight = () => {
+            posLeft += 1;
+            updatePosition();
+        }
+    </script>
+
+</body>
+</html>

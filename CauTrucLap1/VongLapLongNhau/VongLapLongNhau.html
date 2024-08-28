@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vòng lặp lồng nhau</title>
+</head>
+<body style="display:flex; justify-content: center; align-items: center;">
+    <div id="row" style="display: flex; flex-direction: column;"></div>
+
+    <script>
+        let content = '';
+        for (let i = 1; i <= 10; i++) {
+            content += `<div style="display: flex;">`;
+            for (let j = 1; j <= 10; j++) {
+                content += `<div style="width: 40px; border: 1px solid black; text-align: center;">${i*j}</div>`;
+            }
+            content += '</div>';
+        }
+        document.getElementById("row").innerHTML = content;
+    </script>
+</body>
+</html>

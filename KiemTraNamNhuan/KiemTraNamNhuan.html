@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm Tra Năm Nhuận</title>
+</head>
+<body>
+    <script>
+
+        let year = parseInt(prompt("Vui long nhap nam: "));
+        
+        if(!isNaN(year))
+        {
+            if(year%4===0 || (year%400===0 && year%100!=0))
+            {
+                alert("Nam vua nhap la nam nhuan!")
+            }
+            else
+            {
+                alert("Nam vua nhap khong phai nam nhuan!")
+            }
+        }
+        else
+        {
+            alert("Chi duoc nhap so, khong duoc nhap chu!")
+        }
+
+        
+    </script>
+</body>
+</html>

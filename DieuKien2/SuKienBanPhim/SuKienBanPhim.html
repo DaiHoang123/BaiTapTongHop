@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự kiện bàn phím</title>
+    <style>
+        button {
+            background-color: rgb(92, 92, 92);
+            color: white;
+            width: 60px;
+            height: 30px;
+            font-weight: 700;
+        }
+
+        #image1 {
+            width: 95px;
+            position: absolute;
+            z-index: 2;
+        }
+
+        #image2 {
+            width: 95px;
+            position: absolute;
+            z-index: 3;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .img_box {
+            width: 600px;
+            height: 600px;
+            background-color: rgb(187, 187, 187);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .escape_point{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Game "GIẢI CỨU MỒN LÈO"</h1>
+        <div class="img_box">
+            <img src=".\meo.jpg" alt="meo" id="image1">
+            <img src=".\cho.jpg" alt="cho" id="image2">
+            <div class="escape_point">Escape point</div>
+        </div>
+        <p style="font-size: 20px;"><span style="font-weight: 600;">Hướng dẫn: </span>dùng phím mũi tên để di chuyển mồn lèo tới ESCAPE POINT để giải cứu</p>
+    </div>
+
+    <script>
+        let posTop1 = 80;
+        let posLeft1 = 60;
+        let posTop2 = 80;
+        let posLeft2 = 80;
+        let img1 = document.getElementById("image1");
+        let img2 = document.getElementById("image2");
+        img1.style.top = `${posTop1}%`;
+        img1.style.left = `${posLeft1}%`;
+        img2.style.top = `${posTop2}%`;
+         img2.style.left = `${posLeft2}%`;
+
+        const updatePosition = () => {
+            img1.style.top = `${posTop1}%`;
+            img1.style.left = `${posLeft1}%`;
+            setTimeout(() => {
+                img2.style.top = `${posTop2}%`;
+                img2.style.left = `${posLeft2}%`;
+            }, 500);
+            if(posTop1==0 && posLeft1==0)
+            {
+                alert("Giai cuu thanh cong!");
+            }
+        };
+
+        const moveImage = (event) => {
+            switch(event.key) {
+                case 'ArrowUp':
+                    posTop1 -= 1;
+                    posTop2 -= 1;
+                    break;
+                case 'ArrowDown':
+                    posTop1 += 1;
+                    posTop2 += 1;
+                    break;
+                case 'ArrowLeft':
+                    posLeft1 -= 1;
+                    posLeft2 -= 1;
+                    break;
+                case 'ArrowRight':
+                    posLeft1 += 1;
+                    posLeft2 += 1;
+                    break;
+                default:
+                    return;
+            }
+            updatePosition();
+        };
+
+        document.addEventListener('keydown', moveImage);
+
+        updatePosition();
+    </script>
+</body>
+</html>

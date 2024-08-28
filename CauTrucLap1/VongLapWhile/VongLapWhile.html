@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Dung Vong Lap While</title>
+    <style>
+        #content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+        let input = Number(prompt("Nhập số dòng muốn hiển thị: "));
+        let i = 1;
+        for (i ; i <= input ; i++)
+        {
+            let contentDiv = document.getElementById("content");
+            contentDiv.innerHTML += `<div style="width: ${i}%;"><hr></div><br>`
+            console.log("loop: ",i);
+        }
+    </script>
+</body>
+</html>

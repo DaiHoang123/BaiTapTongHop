@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toán Tử Ba Ngôi</title>
+</head>
+<body>
+    <script>
+
+        //Bai1
+        let a = parseInt(prompt('Nhap a: '));
+        let b = parseInt(prompt('Nhap b: '));
+        if(isNaN(a)||isNaN(b))
+        {
+           alert('Chi duoc nhap so!') 
+        }
+        else
+        {
+            alert((a+b)<4 ? 'below':'over');
+        }
+
+        //Bai2
+        let input = prompt('Nhap chuc vu: ');
+        alert(input === 'Employee' ? 'Hello' : input === 'Director' ? 'Greetings' : input === '' ? 'No Login' : '');
+        
+    </script>
+</body>
+</html>

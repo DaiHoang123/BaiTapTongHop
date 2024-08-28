@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Cơ Bản</title>
+</head>
+<body style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, sans-serif;">
+    <h1>Order Form</h1>
+    <h3>What would you like to buy?</h3>
+    <select name="phone" id="phone">
+        <option value="Iphone 15">Iphone 15</option>
+        <option value="Iphone 15 Plus">Iphone 15 Plus</option>
+        <option value="Iphone 15 Pro">Iphone 15 Pro</option>
+        <option value="Iphone 15 Pro Max">Iphone 15 Pro Max</option>
+      </select>
+    <h3>How many would you like to order?</h3>
+    <form>
+        <input type="radio" id="price1" name="price" value="10">
+        <label for="price1">1 - $10</label><br>
+        <input type="radio" id="price2" name="price" value="20">
+        <label for="price2">2 - $20</label><br>  
+        <input type="radio" id="price3" name="price" value="25">
+        <label for="price3">3 - $25</label><br><br>
+    </form>
+    <h3>Name <span style="color: red;">*</span></h3>
+    <input type="text" name="FirstName" placeholder="FirstName">
+    <input type="text" name="LastName" placeholder="LastName">
+    <h3>Email</h3>
+    <input type="text">
+    <h3>Phone Number</h3>
+    <div style="display: flex; height:20px">
+        <input type="text">
+        <div style="display: flex;align-items:center">
+            <p style="margin: 0 10px 0 10px;font-size:30px;">-</p>
+        </div>
+        <input type="text">
+        <div style="display: flex;align-items:center">
+            <p style="margin: 0 10px 0 10px;font-size:30px;">-</p>
+        </div>
+        <input type="text">
+    </div>
+    <br/>
+    <input type="submit" value="Submit">
+</body>
+</html>

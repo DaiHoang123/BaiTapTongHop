@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các bài tập JavaScript</title>
+</head>
+<body>
+    <h1>Các bài tập JavaScript</h1>
+
+    <button onclick="bai1()">Bài 1: Đếm từ 1 đến 100</button>
+    <button onclick="bai2()">Bài 2: Nhập nhiệt độ</button>
+    <button onclick="bai3()">Bài 3: Dãy Fibonacci</button>
+    <button onclick="bai4()">Bài 4: Fibonacci chia hết cho 5</button>
+    <button onclick="bai5()">Bài 5: Tổng 20 số Fibonacci</button>
+    <button onclick="bai6()">Bài 6: Tổng 30 số chia hết cho 7</button>
+    <button onclick="bai7()">Bài 7: FizzBuzz</button>
+
+    <div id="content"></div>
+
+    <script>
+        function bai1() {
+            for (let i = 1; i <= 100; i++) {
+                if (i === 99) {
+                    alert(`i = ${i}: Đã hoàn thành!`);
+                }
+            }
+        }
+
+        function bai2() {
+            const temperature = parseFloat(prompt("Nhập nhiệt độ hiện tại:"));
+            
+            if (temperature > 100) {
+                alert("Nhiệt độ quá cao, hãy giảm nhiệt độ.");
+            } else if (temperature < 20) {
+                alert("Nhiệt độ quá thấp, hãy tăng nhiệt độ.");
+            } else {
+                alert("Nhiệt độ bình thường.");
+            }
+        }
+
+        function bai3() {
+            let a = 1, b = 1;
+            let content = 'Dãy 20 số Fibonacci đầu tiên: ';
+            for (let i = 0; i < 20; i++) {
+                content += a + ' ';
+                let temp = a;
+                a = b;
+                b = temp + b;
+            }
+            alert(content);
+        }
+
+        function bai4() {
+            let a = 1, b = 1;
+            while (true) {
+                let temp = a;
+                a = b;
+                b = temp + b;
+                if (a % 5 === 0) {
+                    alert("Số đầu tiên trong dãy Fibonacci chia hết cho 5 là: " + a);
+                    break;
+                }
+            }
+        }
+
+        function bai5() {
+            let a = 1, b = 1;
+            let sum = 0;
+            for (let i = 0; i < 20; i++) {
+                sum += a;
+                let temp = a;
+                a = b;
+                b = temp + b;
+            }
+            alert("Tổng của 20 số đầu tiên trong dãy Fibonacci là: " + sum);
+        }
+
+        function bai6() {
+            let count = 0, num = 1, sum = 0;
+            while (count < 30) {
+                if (num % 7 === 0) {
+                    sum += num;
+                    count++;
+                }
+                num++;
+            }
+            alert("Tổng của 30 số chia hết cho 7 đầu tiên là: " + sum);
+        }
+
+        function bai7() {
+            let result = '';
+            for (let i = 1; i <= 100; i++) {
+                if (i % 15 === 0) {
+                    result += 'FizzBuzz\n';
+                } else if (i % 3 === 0) {
+                    result += 'Fizz\n';
+                } else if (i % 5 === 0) {
+                    result += 'Buzz\n';
+                } else {
+                    result += i + '\n';
+                }
+            }
+            document.getElementById("content").innerText = result;
+        }
+    </script>
+</body>
+</html>

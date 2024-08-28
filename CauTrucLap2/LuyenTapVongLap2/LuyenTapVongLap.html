@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện Tập Vòng Lặp 2</title>
+</head>
+<body>
+    <div id="hinh1" ></div>
+
+    <script>
+        let n = parseInt(prompt("Nhập số dòng muốn in ra: "));
+        let result = "";
+        for (let i = 1 ; i <= n ; i++)
+        {
+            for (let j = 1 ; j <= 10 ; j++)
+            {
+                result += "*"
+            }
+            result += "\n";
+        }
+        document.getElementById("hinh1").innerText = result;
+    </script>
+</body>
+</html>

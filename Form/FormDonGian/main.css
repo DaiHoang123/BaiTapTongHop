@@ -1,0 +1,57 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+   }
+
+.container{
+    max-width: 800px;
+    height: 300px;
+    background-color: #D5FEFF;
+    margin: auto;
+    display: flex;
+}
+
+.center{
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 90%;
+    height: 90%;
+    background-color: white;
+}
+
+.header{
+    background-color: #FF4C00;
+    margin: 10px;
+    text-align: center;
+}
+
+.header-text{
+    font-size: 30px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.header-input{
+    width: 25%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.hobby-text{
+    color: #FF7E42;
+}
+
+.container2{
+    max-width: 800px;
+    height: 400px;
+    background-color: #FFFDA9;
+    margin: auto;
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+}

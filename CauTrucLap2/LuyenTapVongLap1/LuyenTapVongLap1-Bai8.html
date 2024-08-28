@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập vòng lặp 1 - Bài 8</title>
+    <style>
+        button{
+            margin-top: 30px; 
+            width: 100px; 
+            height: 30px; 
+            border: none; 
+            color: white; 
+            font-weight: 700;;
+        }
+
+        #result{
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input{
+            height: 30px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body style="display: flex; align-items: center; flex-direction: column;">
+    <div style="text-align: center;">
+        <h3>Nhập khoảng giá trị mà bạn muốn đoán số</h3>
+        <div style="display: flex;">
+            <input type="number" id="min" placeholder="Số nhỏ nhất" style="margin-right: 20px;">
+            <input type="number" id="max" placeholder="Số lớn nhất">
+        </div>
+        <h3>Nhập số để dự đoán</h3>
+        <input type="number" id="num" placeholder="Số dự đoán">
+        <br>
+        <button onclick="compare()" style="background-color: blue;">
+            Chơi
+        </button>
+        <button onclick="rePlay()" style="background-color: blueviolet;">
+            Chơi lại
+        </button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        let count = 3;
+        const play = (max, min, num)=> {
+            let ranNum = Math.floor(Math.random() * (max - min + 1)) + min;
+            console.log(`init rannum: ${ranNum}`);
+            if(num === ranNum)
+            {
+                document.getElementById("result").innerText = `số dự đoán ${num}, số ngẫu nhiên ${ranNum}. Bạn đã thắng!`;
+            }
+            else
+            {
+                count--;
+                document.getElementById("result").innerText = `số dự đoán ${num}, số ngẫu nhiên ${ranNum}. Bạn đã thua! Còn ${count} lần để dự đoán`;
+            }
+        }
+        
+        const compare = () => {
+            let min = parseFloat(document.getElementById("min").value);
+            let max = parseFloat(document.getElementById("max").value);
+            let num = parseFloat(document.getElementById("num").value);
+            
+            if(isNaN(min))
+            {
+                document.getElementById("result").innerText = `Chỉ được nhập số, vui lòng nhập lại số nhỏ nhất`;
+            }
+            else if(isNaN(max))
+            {
+                document.getElementById("result").innerText = `Chỉ được nhập số, vui lòng nhập lại số lớn nhất`;
+            }
+            else if(isNaN(num))
+            {
+                document.getElementById("result").innerText = `Chỉ được nhập số, vui lòng nhập lại số dự đoán`;
+            }
+            else if(count > 1) {
+                play(max, min, num);
+            }
+            else
+            {
+                document.getElementById("result").innerText = `Đã hết lượt chơi, chúc bạn may mắn lần sau!`;
+            }
+        }
+
+        const rePlay = () => {
+            count = 3;
+            console.log(`count : ${count}`);
+            document.getElementById("min").value = '';
+            document.getElementById("max").value = '';
+            document.getElementById("num").value = '';
+            document.getElementById("result").innerText = '';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".\main.css"> <!-- Liên kết đến file CSS -->
+    <title>Form Đơn Giản</title> <!-- Tiêu đề trang -->
+</head>
+<body>
+    <div class="container center"> <!-- Khối chứa chính -->
+        <div class="content center"> <!-- Nội dung chính của khối chứa -->
+            <div class="header"> <!-- Phần tiêu đề -->
+                <p class="header-text">sở thích của bạn</p> <!-- Tiêu đề chính -->
+            </div>
+            <div style="width: 100%"> <!-- Khối chứa form và các phần tử khác -->
+                
+                <form action="" style="display: flex;"> <!-- Form nhập họ và tên -->
+                    <div class="header-input"> <!-- Khối chứa label -->
+                        <label for="name">Họ và Tên</label> <!-- Nhãn cho ô nhập -->
+                    </div>
+                    <input type="text" name="name" style="width: 300px;"> <!-- Ô nhập họ và tên -->
+                </form>
+
+                <form action="" style="display: flex;margin-top: 10px;"> <!-- Form nhập email -->
+                    <div class="header-input"> <!-- Khối chứa label -->
+                        <label for="email">Email</label> <!-- Nhãn cho ô nhập email -->
+                    </div>
+                    <input type="text" name="email" style="width: 200px;"> <!-- Ô nhập email -->
+                </form>
+                
+                <div style="display: flex;  margin: 10px 0;"> <!-- Khối chứa phần sở thích -->
+
+                    <div class="header-input"> <!-- Khối chứa label cho sở thích -->
+                        <label for="hobby">Sở thích</label> <!-- Nhãn cho phần chọn sở thích -->
+                    </div>
+
+                    <div>
+                        <!-- Các ô checkbox cho sở thích -->
+                        <div style="display: flex;margin-bottom: 10px;">
+                            <div style="display: flex; width: 130px;">
+                                <input type="checkbox" style="margin:0 5px;"> <!-- Checkbox cho thể thao -->
+                                <p class="hobby-text">Thể thao</p> <!-- Văn bản cho checkbox -->
+                            </div>
+                            <div style="display: flex; width: 130px;">
+                                <input type="checkbox" style="margin:0 5px;"> <!-- Checkbox cho âm nhạc -->
+                                <p class="hobby-text">Âm nhạc</p> <!-- Văn bản cho checkbox -->
+                            </div>
+                            <div style="display: flex; width: 130px;">
+                                <input type="checkbox" style="margin:0 5px;"> <!-- Checkbox cho đọc sách -->
+                                <p class="hobby-text">Đọc sách</p> <!-- Văn bản cho checkbox -->
+                            </div>
+                        </div>
+
+                        <div style="display: flex;margin-bottom: 10px;">
+                            <div style="display: flex; width: 130px;">
+                                <input type="checkbox" style="margin:0 5px;"> <!-- Checkbox cho lướt web -->
+                                <p class="hobby-text">Lướt web</p> <!-- Văn bản cho checkbox -->
+                            </div>
+                            <div style="display: flex; width: 130px;">
+                                <input type="checkbox" style="margin:0 5px;"> <!-- Checkbox cho chơi game -->
+                                <p class="hobby-text">Chơi game</p> <!-- Văn bản cho checkbox -->
+                            </div>
+                            <div style="display: flex; width: 130px;">
+                                <input type="checkbox" style="margin:0 5px;"> <!-- Checkbox cho điện ảnh -->
+                                <p class="hobby-text">Điện ảnh</p> <!-- Văn bản cho checkbox -->
+                            </div>
+                        </div>
+
+                        <div style="display: flex;">
+                            <div style="display: flex; width: 100%;">
+                                <input type="checkbox" style="margin:0 5px;"> <!-- Checkbox cho du lịch -->
+                                <p class="hobby-text">Du lịch</p> <!-- Văn bản cho checkbox -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div style="margin-left: 26%;"> <!-- Khối chứa các nút bấm -->
+                    <input type="button" name="Send" value="Gửi thông tin"> <!-- Nút gửi thông tin -->
+                    <input type="button" name="Retype" value="Nhập lại"> <!-- Nút nhập lại -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container2"> <!-- Khối chứa phần đăng ký học viên -->
+        <div class="header" style="height: 40px;width: 100%;text-align: left;background-color: #D4FDD6;"> <!-- Tiêu đề cho phần đăng ký -->
+            <p class="header-text" style="margin-left: 10px;color: #204AFE;font-weight: 600;">đăng ký học viên</p> <!-- Tiêu đề phần đăng ký -->
+        </div>
+        <div style="width: 100%;"> <!-- Khối chứa form nhập họ và tên -->
+            <form action="" style="display: flex;">
+                <div class="header-input" style="text-align: left;width: 15%;"> <!-- Khối chứa label cho họ và tên -->
+                    <label for="name" style="margin-left: 20px;color: #001AAA;">Họ và Tên</label> <!-- Nhãn cho ô nhập -->
+                </div>
+                <input type="text" name="name" style="width: 300px;"> <!-- Ô nhập họ và tên -->
+            </form>
+        </div>
+        <div style="width: 100%;margin-top: 10px;"> <!-- Khối chứa form nhập ngày sinh -->
+            <form action="" style="display: flex;">
+                <div class="header-input" style="text-align: left;width: 15%;"> <!-- Khối chứa label cho ngày sinh -->
+                    <label for="name" style="margin-left: 20px;color: #001AAA;">Ngày sinh</label> <!-- Nhãn cho ô nhập ngày sinh -->
+                </div>
+                <input type="text" name="name" style="width: 200px;"> <!-- Ô nhập ngày sinh -->
+            </form>
+        </div>
+        <div style="width: 100%;margin-top: 10px;"> <!-- Khối chứa form chọn giới tính -->
+            <form action="" style="display: flex;">
+                <div class="header-input" style="text-align: left;width: 15%;"> <!-- Khối chứa label cho giới tính -->
+                    <label for="name" style="margin-left: 20px;color: #001AAA;">Giới tính</label> <!-- Nhãn cho phần chọn giới tính -->
+                </div>
+                <input type="radio" name="Sex" value="Nam" style="margin-right: 3px;"> <!-- Radio button cho Nam -->
+                <label for="html" style="margin-right: 10px;">Nam</label> <!-- Văn bản cho radio button Nam -->
+                <input type="radio" name="Sex" value="Nữ" style="margin-right: 3px;"> <!-- Radio button cho Nữ -->
+                <label for="css">Nữ</label> <!-- Văn bản cho radio button Nữ -->
+            </form>
+        </div>
+
+        <div style="width: 100%;margin-top: 10px;"> <!-- Khối chứa form nhập địa chỉ -->
+            <form action="" style="display: flex;">
+                <div class="header-input" style="text-align: left;width: 15%;"> <!-- Khối chứa label cho địa chỉ -->
+                    <label for="name" style="margin-left: 20px;color: #001AAA;">Địa chỉ</label> <!-- Nhãn cho ô nhập địa chỉ -->
+                </div>
+                <input type="text" name="name" style="width: 200px; height: 70px;"> <!-- Ô nhập địa chỉ -->
+            </form>
+        </div>
+
+        <div style="width: 100%;margin-top: 10px;"> <!-- Khối chứa form chọn lớp -->
+            <form action="" style="display: flex;">
+                <div class="header-input" style="text-align: left;width: 15%;"> <!-- Khối chứa label cho lớp -->
+                    <label for="name" style="margin-left: 20px;color: #001AAA;">Lớp</label> <!-- Nhãn cho phần chọn lớp -->
+                </div>
+                <select name="class"> <!-- Danh sách chọn lớp -->
+                    <option value="-Chọn lớp-">-Chọn lớp-</option> <!-- Tùy chọn mặc định -->
+                    <option value="ClassA">ClassA</option> <!-- Tùy chọn lớp A -->
+                    <option value="ClassB">ClassB</option> <!-- Tùy chọn lớp B -->
+                    <option value="ClassC">ClassC</option> <!-- Tùy chọn lớp C -->
+                </select>
+            </form>
+        </div>
+
+        <div style="width: 100%; margin-top: 10px;"> <!-- Khối chứa form nhập email -->
+            <form action="" style="display: flex;"> <!-- Form nhập email -->
+                <div class="header-input" style="text-align: left;width: 15%;"> <!-- Khối chứa label cho email -->
+                    <label for="name" style="margin-left: 20px;color: #001AAA;">Email</label> <!-- Nhãn cho ô nhập email -->
+                </div>
+                <input type="text" name="name" style="width: 250px;"> <!-- Ô nhập email -->
+            </form>
+        </div>
+
+        <div style="width: 100%;margin-top: 10px;"> <!-- Khối chứa form nhập số điện thoại -->
+            <form action="" style="display: flex;">
+                <div class="header-input" style="text-align: left;width: 15%;"> <!-- Khối chứa label cho số điện thoại -->
+                    <label for="name" style="margin-left: 20px;color: #001AAA;">Điện thoại</label> <!-- Nhãn cho ô nhập số điện thoại -->
+                </div>
+                <input type="text" name="name" style="width: 250px;"> <!-- Ô nhập số điện thoại -->
+            </form>
+        </div>
+
+        <div style="width: 100%;margin-top: 10px;"> <!-- Khối chứa các nút bấm trong form đăng ký -->
+            <form action="" style="display: flex;">
+                <div class="header-input" style="text-align: left;width: 15%;"> <!-- Khối chứa label, nhưng ở đây không có nhãn -->
+                    <label for="name" style="margin-left: 20px;color: #001AAA;"></label> <!-- Label trống (có thể để trống nếu không cần nhãn) -->
+                </div>
+                <input type="button" value="Đăng ký" style="width: 100px;"> <!-- Nút đăng ký -->
+                <input type="button" value="Nhập lại" style="width: 100px;"> <!-- Nút nhập lại -->
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
+
+

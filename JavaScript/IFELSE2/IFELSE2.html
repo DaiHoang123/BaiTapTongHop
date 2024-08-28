@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF_ELSE_2</title>
+</head>
+<body>
+    <script>
+
+        let userN = prompt("Username?");
+        let PW;
+
+        if(userN.length===0)
+        {
+            alert("Canceled")
+        }
+        else
+        {
+            if(userN === "Admin" || userN ==="admin")
+            {
+                PW = prompt("Password?");
+                if(PW === "TheMaster" || PW === "themaster")
+                {
+                    alert("Welcome!")
+                }
+                else
+                {
+                    alert("Canceled")
+                }
+            }
+            else
+            {
+                alert("I don't know you!")
+            }
+            
+        }
+    </script>
+</body>
+</html>
