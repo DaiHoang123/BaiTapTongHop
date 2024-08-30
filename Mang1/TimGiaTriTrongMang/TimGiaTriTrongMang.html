@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị trong mảng</title>
+</head>
+<body>
+    <h1>Tìm giá trị trong mảng</h1>
+    <p id="mangHienThi"></p>
+    <button onclick="taoMangMoi()">Tạo mảng mới</button>
+    <br><br>
+    <input type="text" id="giaTriNhap" placeholder="Nhập giá trị cần tìm">
+    <button onclick="timGiaTri()">Tìm kiếm</button>
+    <p id="ketQua"></p>
+
+    <script>
+        let mang;
+
+        function taoMangMoi() {
+            mang = Array.from({length: 10}, () => Math.floor(Math.random() * 100) + 1);
+            document.getElementById('mangHienThi').textContent = 'Mảng: ' + mang.join(', ');
+            document.getElementById('ketQua').textContent = '';
+        }
+
+        function timGiaTri() {
+            if (!mang) {
+                alert('Vui lòng tạo mảng trước khi tìm kiếm!');
+                return;
+            }
+
+            const giaTriNhap = document.getElementById('giaTriNhap').value;
+            const ketQua = document.getElementById('ketQua');
+
+            if (giaTriNhap === '') {
+                alert('Vui lòng nhập giá trị cần tìm!');
+                return;
+            }
+
+            const viTri = mang.indexOf(parseInt(giaTriNhap));
+
+            if (viTri !== -1) {
+                ketQua.textContent = `Tìm thấy giá trị ${giaTriNhap} tại vị trí ${viTri}.`;
+            } else {
+                ketQua.textContent = `Không tìm thấy giá trị ${giaTriNhap} trong mảng.`;
+            }
+        }
+
+        taoMangMoi();
+    </script>
+</body>
+</html>
