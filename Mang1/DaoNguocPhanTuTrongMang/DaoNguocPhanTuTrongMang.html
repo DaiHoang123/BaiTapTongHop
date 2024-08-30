@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đảo ngược phần tử trong mảng</title>
+</head>
+<body>
+    <h3>Mảng Gốc</h3>
+    <div id="MangGoc"></div>
+
+    <h3>Mảng đã đảo vị trí</h3>
+    <div id="MangDaoNguoc"></div>
+
+    <h3>Nhập giá trị vào mảng</h3>
+    <div id="MangNhap"></div>
+
+    <input type="text" id="inputMang" placeholder="Nhập giá trị">
+    <button onclick="themMang()">Thêm</button>
+
+    <h3>Mảng Đã Nhập</h3>
+    <div id="MangDaNhap"></div>
+
+    <h3>Đảo vị trí của mảng đã nhập</h3>
+    <div id="DaoNguocMangDNhap"></div>
+
+    <script>
+
+        themMang = () => {
+            let value = document.getElementById("inputMang").value;
+            if (arrinput[0] === "...") {
+                arrinput = [value];
+            } else {
+                arrinput.push(value);
+            }
+            document.getElementById("MangDaNhap").innerText = arrinput;
+            revertArrInput = daoNguocMang(arrinput);
+            document.getElementById("DaoNguocMangDNhap").innerText = revertArrInput;
+            document.getElementById("inputMang").value = ""; // Xóa giá trị trong ô input sau khi thêm
+        }
+
+        daoNguocMang = (arr) => {
+            let revertArr = [];
+            for (let i = arr.length - 1; i >= 0; i--) {
+                revertArr.push(arr[i]);
+            }
+            return revertArr;
+        }
+
+        let arr = [-3,5,1,3,2,10];
+        let revertArr = daoNguocMang(arr);
+        let arrinput = ["..."];
+        let revertArrInput = ["..."];
+        document.getElementById("MangGoc").innerText = arr;
+        document.getElementById("MangDaoNguoc").innerText = revertArr;
+        document.getElementById("MangDaNhap").innerText = arrinput;
+        document.getElementById("DaoNguocMangDNhap").innerText = revertArrInput;
+    </script>
+</body>
+</html>
