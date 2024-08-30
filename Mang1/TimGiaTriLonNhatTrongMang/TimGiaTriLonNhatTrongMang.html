@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị lớn nhất trong mảng</title>
+</head>
+<body>
+    <h1>Tìm giá trị lớn nhất trong mảng</h1>
+    <button onclick="taoMangMoi()">Tạo mảng mới</button>
+    <div id="ketQua"></div>
+
+    <script>
+        function taoMangNgauNhien(soLuong, min, max) {
+            return Array.from({length: soLuong}, () => Math.floor(Math.random() * (max - min + 1)) + min);
+        }
+
+        function timSoLonNhat(mang) {
+            return Math.max(...mang);
+        }
+
+        function taoMangMoi() {
+            const mang = taoMangNgauNhien(10, 1, 100);
+            const soLonNhat = timSoLonNhat(mang);
+
+            const ketQua = document.getElementById('ketQua');
+            ketQua.innerHTML = `
+                <p>Mảng đã tạo: ${mang.join(', ')}</p>
+                <p>Số lớn nhất trong mảng: ${soLonNhat}</p>
+            `;
+        }
+
+        taoMangMoi();
+    </script>
+</body>
+</html>
