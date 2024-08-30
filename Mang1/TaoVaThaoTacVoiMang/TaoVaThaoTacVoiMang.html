@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo và Thao tác với Mảng</title>
+</head>
+<body>
+    <h1>Nhập giá trị vào mảng</h1>
+    <input type="text" id="giaTriNhap" placeholder="Nhập giá trị">
+    <button onclick="themGiaTri()">Thêm</button>
+    <button onclick="xoaMang()">Xóa Mảng</button>
+    <div id="mangHienThi"></div>
+
+    <script>
+        let mang = [];
+
+        function themGiaTri() {
+            const giaTriNhap = document.getElementById('giaTriNhap');
+            if (giaTriNhap.value !== '') {
+                mang.push(giaTriNhap.value);
+                giaTriNhap.value = '';
+                hienThiMang();
+            }
+        }
+
+        function hienThiMang() {
+            const mangHienThi = document.getElementById('mangHienThi');
+            mangHienThi.innerHTML = '<h2>Các giá trị trong mảng:</h2>';
+            for (let i = 0; i < mang.length; i++) {
+                mangHienThi.innerHTML += `<p>${mang[i]}</p>`;
+            }
+        }
+
+        function xoaMang() {
+            mang = [];
+            hienThiMang();
+        }
+    </script>
+</body>
+</html>
