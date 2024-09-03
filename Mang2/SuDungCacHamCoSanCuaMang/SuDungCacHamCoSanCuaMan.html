@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng hàm có sẵn của mảng</title>
+    <style>
+        .bai {
+            margin-bottom: 20px;
+        }
+        input, button {
+            margin: 5px 0;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bai" id="bai1">
+        <h2>Bài 1:</h2>
+        <p id="ketQuaBai1"></p>
+    </div>
+
+    <div class="bai" id="bai2">
+        <h2>Bài 2: Chèn dấu (-) giữa 2 số chẵn</h2>
+        <input type="number" id="soBai2" placeholder="Nhập số">
+        <button onclick="xuLyBai2()">NHẬP</button>
+        <p id="ketQuaBai2"></p>
+    </div>
+
+    <div class="bai" id="bai3">
+        <h2>Bài 3: Chuyển đổi chữ hoa/thường</h2>
+        <input type="text" id="chuoiBai3" placeholder="Nhập chuỗi">
+        <button onclick="xuLyBai3()">NHẬP</button>
+        <p id="ketQuaBai3"></p>
+    </div>
+
+    <script>
+        // Bài 1
+        let arr = ["Red", "Green", "White", "Black"];
+        document.getElementById("ketQuaBai1").innerHTML = arr.join(" ");
+
+        // Bài 2
+        function chenDauGiuaSoChan(so) {
+            return so.toString().split('').map((digit, index, array) => {
+                if (index < array.length - 1 && 
+                    parseInt(digit) % 2 === 0 && 
+                    parseInt(array[index + 1]) % 2 === 0) {
+                    return digit + '-';
+                }
+                return digit;
+            }).join('');
+        }
+
+        function xuLyBai2() {
+            let soNhapVao = document.getElementById("soBai2").value;
+            let ketQua = chenDauGiuaSoChan(soNhapVao);
+            document.getElementById("ketQuaBai2").innerHTML = "Kết quả: " + ketQua;
+        }
+
+        // Bài 3
+        function chuyenDoiChuHoaThuong(chuoi) {
+            return chuoi.split('').map(char => {
+                return char.toUpperCase();
+            }).join('');
+        }
+
+        function xuLyBai3() {
+            let chuoiNhapVao = document.getElementById("chuoiBai3").value;
+            let ketQua = chuyenDoiChuHoaThuong(chuoiNhapVao);
+            document.getElementById("ketQuaBai3").innerHTML = "Kết quả: " + ketQua;
+        }
+    </script>
+</body>
+</html>
