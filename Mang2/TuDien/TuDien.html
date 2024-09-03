@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Từ điển</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            font-size: 16px;
+            padding: 5px;
+        }
+        #ketQua {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Từ điển</h1>
+    <p style="font-style: italic;">(Dùng các từ hello, world, computer, book, pen để dịch)</p>
+    <input type="text" id="input" placeholder="Nhập từ cần dịch">
+    <button onclick="dich()">Dịch</button>
+    <div id="ketQua"></div>
+
+    <script>
+        const tiengAnh = ["hello", "world", "computer", "book", "pen"];
+        const tiengViet = ["xin chào", "thế giới", "máy tính", "sách", "bút"];
+
+        function dich() {
+            const input = document.getElementById("input").value.toLowerCase();
+            const ketQua = document.getElementById("ketQua");
+            
+            const viTri = tiengAnh.indexOf(input);
+            
+            if (viTri !== -1) {
+                ketQua.textContent = `${tiengAnh[viTri]}: ${tiengViet[viTri]}`;
+            } else {
+                ketQua.textContent = "Không tìm thấy từ này trong từ điển.";
+            }
+        }
+    </script>
+</body>
+</html>
