@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện Tập Tạo Hàm 01</title>
+    <script>
+        // Bài 1
+        function alertMessage() {
+            alert("Xin chao");
+        }
+
+        // Bài 2
+        function tangGiaTri(so) {
+            return so + 1;
+        }
+
+        function xuLyBai2() {
+            let so = parseInt(document.getElementById("inputBai2").value);
+            let ketQua = tangGiaTri(so);
+            document.getElementById("ketQuaBai2").innerHTML = "Kết quả: " + ketQua;
+        }
+
+        // Bài 3
+        function soSanh(a, b) {
+            if (a > b) {
+                alert("Số thứ nhất lớn hơn số thứ hai");
+                return null;
+            } else {
+                return a + b;
+            }
+        }
+
+        function xuLyBai3() {
+            let a = parseInt(document.getElementById("inputBai3a").value);
+            let b = parseInt(document.getElementById("inputBai3b").value);
+            let ketQua = soSanh(a, b);
+            if (ketQua !== null) {
+                document.getElementById("ketQuaBai3").innerHTML = "Tổng: " + ketQua;
+            } else {
+                document.getElementById("ketQuaBai3").innerHTML = "Đã hiển thị thông báo";
+            }
+        }
+
+        // Bài 4
+        function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+        }
+
+        // Bài 5
+        let stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let constellations = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+        function findConstellation(starName) {
+            for (let i = 0; i < stars.length; i++) {
+                if (starName.toLowerCase() === stars[i].toLowerCase()) {
+                    return constellations[i];
+                }
+            }
+            return "Không tìm thấy chòm sao tương ứng";
+        }
+
+        function xuLyBai5() {
+            let inputStar = document.getElementById("inputBai5").value;
+            let resultBai5 = findConstellation(inputStar);
+            document.getElementById("ketQuaBai5").innerHTML = "Chòm sao tương ứng với " + inputStar + ": " + resultBai5;
+        }
+    </script>
+</head>
+<body>
+    <h1>Luyện Tập Tạo Hàm 01</h1>
+
+    <h2>Bài 1</h2>
+    <button onclick="alertMessage()">Hiển thị thông báo</button>
+
+    <h2>Bài 2</h2>
+    <input type="number" id="inputBai2" placeholder="Nhập số">
+    <button onclick="xuLyBai2()">Tăng giá trị</button>
+    <p id="ketQuaBai2"></p>
+
+    <h2>Bài 3</h2>
+    <input type="number" id="inputBai3a" placeholder="Số thứ nhất">
+    <input type="number" id="inputBai3b" placeholder="Số thứ hai">
+    <button onclick="xuLyBai3()">So sánh và tính tổng</button>
+    <p id="ketQuaBai3"></p>
+
+    <h2>Bài 4</h2>
+    <script>
+        result = 0;
+        alert("Giá trị của result trước khi gọi hàm: " + result);
+        result = addNumbers(); 
+        alert("Giá trị của result sau khi gọi hàm: " + result);
+        document.write("<p>Kết quả Bài 4: " + result + "</p>");
+    </script>
+
+    <h2>Bài 5</h2>
+    <input type="text" id="inputBai5" placeholder="Nhập tên ngôi sao">
+    <button onclick="xuLyBai5()">Tìm chòm sao</button>
+    <p id="ketQuaBai5"></p>
+</body>
+</html>
