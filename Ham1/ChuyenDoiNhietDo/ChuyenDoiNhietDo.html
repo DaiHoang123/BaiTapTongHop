@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi nhiệt độ</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        input { margin: 10px; padding: 5px; }
+        button { padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <h1>Chuyển đổi độ C và độ F</h1>
+    <input type="number" id="doC" placeholder="Độ C">
+    <input type="number" id="doF" placeholder="Độ F">
+    <br>
+    <button onclick="convert()">Chuyển đổi</button>
+    <button onclick="remove()">Xóa</button>
+    <script>
+        function convert() {
+            let doC = document.getElementById('doC').value;
+            let doF = document.getElementById('doF').value;
+
+            if (doC !== '') {
+                doF = (doC * 9/5) + 32;
+                document.getElementById('doF').value = doF.toFixed(2);
+            } else if (doF !== '') {
+                doC = (doF - 32) * 5/9;
+                document.getElementById('doC').value = doC.toFixed(2);
+            }
+        }
+        function remove() {
+            document.getElementById('doC').value = '';
+            document.getElementById('doF').value = '';
+        }
+    </script>
+</body>
+</html>
