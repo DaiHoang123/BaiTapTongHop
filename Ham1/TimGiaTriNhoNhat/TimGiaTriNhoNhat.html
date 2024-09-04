@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị nhỏ nhất trong mảng</title>
+</head>
+<body>
+    <h1>Tìm giá trị nhỏ nhất trong mảng</h1>
+    <div id="ketQua"></div>
+
+    <script>
+        // Hàm tìm giá trị nhỏ nhất trong mảng
+        function timGiaTriNhoNhat(mang) {
+            if (mang.length === 0) {
+                return "Mảng rỗng";
+            }
+            return Math.min(...mang);
+        }
+
+        // Các mảng cho trước   
+        const arr1 = [3, 5, 1, 8, -3, 7, 8];
+        const arr2 = [7, 12, 6, 9, 20, 56, 89];
+        const arr3 = [];
+        const arr4 = [0, 0, 0, 0, 0, 0];
+
+        // Tìm giá trị nhỏ nhất cho từng mảng
+        const nhoNhat1 = timGiaTriNhoNhat(arr1);
+        const nhoNhat2 = timGiaTriNhoNhat(arr2);
+        const nhoNhat3 = timGiaTriNhoNhat(arr3);
+        const nhoNhat4 = timGiaTriNhoNhat(arr4);
+
+        // Hiển thị kết quả
+        const ketQua = document.getElementById('ketQua');
+        ketQua.innerHTML = `
+            <p>Mảng 1: [${arr1}] - Giá trị nhỏ nhất: ${nhoNhat1}</p>
+            <p>Mảng 2: [${arr2}] - Giá trị nhỏ nhất: ${nhoNhat2}</p>
+            <p>Mảng 3: [${arr3}] - Giá trị nhỏ nhất: ${nhoNhat3}</p>
+            <p>Mảng 4: [${arr4}] - Giá trị nhỏ nhất: ${nhoNhat4}</p>
+        `;
+    </script>
+</body>
+</html>
