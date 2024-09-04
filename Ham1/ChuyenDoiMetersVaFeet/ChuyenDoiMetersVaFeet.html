@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi Meter và Feet</title>
+    <style>
+        body
+        { 
+            font-family: Arial, sans-serif; 
+        }
+
+        .container 
+        { 
+            max-width: 300px; 
+            margin: 0 auto; 
+        }
+
+        input, button 
+        { 
+            margin: 5px 0; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Chuyển đổi Meter và Feet</h2>
+        <input type="number" id="meter" placeholder="Nhập meter">
+        <input type="number" id="feet" placeholder="Nhập feet">
+        <button onclick="chuyenDoi()">Chuyển đổi</button>
+        <button onclick="xoa()">Xóa</button>
+    </div>
+
+    <script>
+        function meterToFeet(meter) {
+            return meter * 3.28084;
+        }
+
+        function feetToMeter(feet) {
+            return feet / 3.28084;
+        }
+
+        function chuyenDoi() {
+            let meter = document.getElementById('meter').value;
+            let feet = document.getElementById('feet').value;
+
+            if (meter !== '') {
+                document.getElementById('feet').value = meterToFeet(parseFloat(meter)).toFixed(2);
+            } else if (feet !== '') {
+                document.getElementById('meter').value = feetToMeter(parseFloat(feet)).toFixed(2);
+            }
+        }
+
+        function xoa() {
+            document.getElementById('meter').value = '';
+            document.getElementById('feet').value = '';
+        }
+
+        document.getElementById('meter').addEventListener('input', function() {
+            document.getElementById('feet').value = meterToFeet(parseFloat(this.value)).toFixed(2);
+        });
+
+        document.getElementById('feet').addEventListener('input', function() {
+            document.getElementById('meter').value = feetToMeter(parseFloat(this.value)).toFixed(2);
+        });
+    </script>
+</body>
+</html>
