@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập tạo hàm 02</title>
+</head>
+<body>
+    <h1>Bài tập JavaScript</h1>
+
+    <div>
+        <h2>Bài 1: Tính bình phương</h2>
+        <input type="number" id="bai1-input" placeholder="Nhập số">
+        <button onclick="tinhBinhPhuong()">Tính</button>
+        <p id="bai1-ketqua"></p>
+    </div>
+
+    <div>
+        <h2>Bài 2: Tính diện tích và chu vi hình tròn</h2>
+        <input type="number" id="bai2-input" placeholder="Nhập bán kính">
+        <button onclick="tinhHinhTron()">Tính</button>
+        <p id="bai2-ketqua"></p>
+    </div>
+
+    <div>
+        <h2>Bài 3: Tính giai thừa</h2>
+        <input type="number" id="bai3-input" placeholder="Nhập số nguyên">
+        <button onclick="tinhGiaiThua()">Tính</button>
+        <p id="bai3-ketqua"></p>
+    </div>
+
+    <div>
+        <h2>Bài 4: Kiểm tra ký tự số</h2>
+        <input type="text" id="bai4-input" placeholder="Nhập ký tự">
+        <button onclick="kiemTraKyTuSo()">Kiểm tra</button>
+        <p id="bai4-ketqua"></p>
+    </div>
+
+    <div>
+        <h2>Bài 5: Tìm số nhỏ nhất</h2>
+        <input type="number" id="bai5-input1" placeholder="Số thứ nhất">
+        <input type="number" id="bai5-input2" placeholder="Số thứ hai">
+        <input type="number" id="bai5-input3" placeholder="Số thứ ba">
+        <button onclick="timSoNhoNhat()">Tìm</button>
+        <p id="bai5-ketqua"></p>
+    </div>
+
+    <div>
+        <h2>Bài 6: Kiểm tra số nguyên dương</h2>
+        <input type="number" id="bai6-input" placeholder="Nhập số">
+        <button onclick="kiemTraNguyenDuong()">Kiểm tra</button>
+        <p id="bai6-ketqua"></p>
+    </div>
+
+    <div>
+        <h2>Bài 7: Đổi chỗ hai số</h2>
+        <input type="number" id="bai7-input1" placeholder="Số thứ nhất">
+        <input type="number" id="bai7-input2" placeholder="Số thứ hai">
+        <button onclick="doiChoHaiSo()">Đổi chỗ</button>
+        <p id="bai7-ketqua"></p>
+    </div>
+
+    <div>
+        <h2>Bài 8: Đảo ngược mảng</h2>
+        <input type="text" id="bai8-input" placeholder="Nhập mảng (cách nhau bởi dấu phẩy)" style="width: 300px;">
+        <button onclick="daoNguocMang()">Đảo ngược</button>
+        <p id="bai8-ketqua"></p>
+    </div>
+
+    <div>
+        <h2>Bài 9: Đếm ký tự trong mảng</h2>
+        <input type="text" id="bai9-input1" placeholder="Nhập mảng (cách nhau bởi dấu phẩy)">
+        <input type="text" id="bai9-input2" placeholder="Nhập ký tự cần đếm">
+        <button onclick="demKyTu()">Đếm</button>
+        <p id="bai9-ketqua"></p>
+    </div>
+
+    <script>
+        function tinhBinhPhuong() {
+            const n = parseFloat(document.getElementById('bai1-input').value);
+            document.getElementById('bai1-ketqua').textContent = `Bình phương của ${n} là: ${n * n}`;
+        }
+
+        function tinhHinhTron() {
+            const r = parseFloat(document.getElementById('bai2-input').value);
+            const dienTich = Math.PI * r * r;
+            const chuVi = 2 * Math.PI * r;
+            document.getElementById('bai2-ketqua').textContent = `Diện tích: ${dienTich.toFixed(2)}, Chu vi: ${chuVi.toFixed(2)}`;
+        }
+
+        function tinhGiaiThua() {
+            const n = parseInt(document.getElementById('bai3-input').value);
+            let giaiThua = 1;
+            for (let i = 2; i <= n; i++) giaiThua *= i;
+            document.getElementById('bai3-ketqua').textContent = `Giai thừa của ${n} là: ${giaiThua}`;
+        }
+
+        function kiemTraKyTuSo() {
+            const c = document.getElementById('bai4-input').value;
+            document.getElementById('bai4-ketqua').textContent = `Là ký tự số: ${/^\d+$/.test(c)}`;
+        }
+
+        function timSoNhoNhat() {
+            const a = parseFloat(document.getElementById('bai5-input1').value);
+            const b = parseFloat(document.getElementById('bai5-input2').value);
+            const c = parseFloat(document.getElementById('bai5-input3').value);
+            document.getElementById('bai5-ketqua').textContent = `Số nhỏ nhất là: ${Math.min(a, b, c)}`;
+        }
+
+        function kiemTraNguyenDuong() {
+            const n = parseFloat(document.getElementById('bai6-input').value);
+            document.getElementById('bai6-ketqua').textContent = `Là số nguyên dương: ${Number.isInteger(n) && n > 0}`;
+        }
+
+        function doiChoHaiSo() {
+            let a = document.getElementById('bai7-input1').value;
+            let b = document.getElementById('bai7-input2').value;
+            [a, b] = [b, a];
+            document.getElementById('bai7-ketqua').textContent = `Sau khi đổi chỗ: a = ${a}, b = ${b}`;
+        }
+
+        function daoNguocMang() {
+            //slit chia chuỗi thành mảng dựa vào dấu phẩy
+            //map thứ nhất dùng để bỏ hết khoảng trắng
+            //filter lọc ra các phần tử không phải là số, với điều kiện không phải là chuỗi rỗng và không phải là NaN
+            //map thứ hai dùng để chuyển đổi từng phần tử của mảng thành số
+            //tất cả phương thức đều trả về mảng mới, phương thức sau xử lý mảng của phương thức trước đó trả về
+            const arr = document.getElementById('bai8-input').value
+                .split(',')
+                .map(item => item.trim())
+                .filter(item => item !== "" && !isNaN(Number(item)))
+                .map(Number);
+            const reversedArr = arr.reverse();
+            document.getElementById('bai8-ketqua').textContent = `Mảng đảo ngược: ${reversedArr.join(', ')}`;
+        }
+
+        function demKyTu() {
+            const arr = document.getElementById('bai9-input1').value.split(',');
+            const char = document.getElementById('bai9-input2').value;
+            let count = arr.filter(c => c === char).length;
+            document.getElementById('bai9-ketqua').textContent = `Số lần xuất hiện: ${count > 0 ? count : -1}`;
+        }
+    </script>
+</body>
+</html>
