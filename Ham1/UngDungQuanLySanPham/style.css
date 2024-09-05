@@ -1,0 +1,94 @@
+body{
+    display: flex;
+    justify-content: center;
+    font-family: "Times New Roman", Times, serif;
+    position: relative;
+}
+#container{
+    min-width: 600px;
+    margin: auto;
+    max-width: 600px;
+}
+button{
+    height: 100%;
+    color: white;
+    background-color: #50AF50;
+    border-radius: 5px;
+    margin-left: 15px;
+    width: 100px;
+    flex-shrink: 0;
+    border: none;
+}
+.outside_input_box{
+    height: 80px;
+    width: 100%;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.input_box{
+    margin: 0 15px;
+    height: 50%;
+    display: flex;
+    width: 100%;
+}
+input{
+    width: 60%;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 1px solid #CECECE;
+}  
+.product_1{
+    background-color: #F2F2F2;
+    min-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:10px;
+    padding-right: 30px;
+    word-break: break-all;
+}
+.product_name{
+    padding-left: 10px;
+    font-weight: bold;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.modal{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal_notice{
+    background-color: rgb(235, 235, 235);
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.modal_notice_text{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    flex: 3;
+    margin-top: 30px;
+}
+.button_modal{
+    margin:0 0 10px 0;
+    height: 40px;
+    margin-bottom: 20px;
+}
