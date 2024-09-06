@@ -23,6 +23,8 @@
         </div>
         <div id="result"></div>
     </div>
+
+    <!-- Modal thông báo nhập tên sản phẩm -->
     <div class="modal">
         <div class="modal_notice">
             <div class="modal_notice_text">
@@ -30,6 +32,19 @@
             </div>
             <div style="flex:1">
                 <button onclick="closeModal()" class="button_modal">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal nhập tên sản phẩm muốn đổi -->
+    <div class="modal_change_product">
+        <div class="modal_notice">
+            <div class="modal_notice_text">
+                <input type="text" id="input_change_product" placeholder="Nhập tên sản phẩm muốn đổi" class="input_change_product">
+            </div>
+            <div style="flex:1">
+                <button onclick="changeProduct(indexGlobal)" class="button_modal">OK</button>
+                <button onclick="closeModalChangeProduct()" class="button_modal">Cancel</button>
             </div>
         </div>
     </div>

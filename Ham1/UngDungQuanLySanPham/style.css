@@ -5,9 +5,9 @@ body{
     position: relative;
 }
 #container{
-    min-width: 600px;
+    min-width: 700px;
     margin: auto;
-    max-width: 600px;
+    max-width: 700px;
 }
 button{
     height: 100%;
@@ -40,19 +40,26 @@ input{
     border-radius: 5px;
     padding-left: 10px;
     border: 1px solid #CECECE;
-}  
+}
+
+.input_change_product{
+    width: 80%;
+    height: 50px;
+    border: 1px solid #CECECE;
+    border-radius: 5px;
+}
+
 .product_1{
     background-color: #F2F2F2;
     min-height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left:10px;
-    padding-right: 30px;
+    padding: 10px 10px 10px 30px;
     word-break: break-all;
 }
 .product_name{
-    padding-left: 10px;
+    padding-left: 30px;
     font-weight: bold;
     height: 50px;
     display: flex;
@@ -69,9 +76,22 @@ input{
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+.modal_change_product{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .modal_notice{
     background-color: rgb(235, 235, 235);
-    width: 300px;
+    width: 400px;
     height: 200px;
     border-radius: 10px;
     display: flex;
@@ -79,6 +99,7 @@ input{
     align-items: center;
     flex-direction: column;
 }
+
 .modal_notice_text{
     display: flex;
     justify-content: start;
@@ -86,6 +107,7 @@ input{
     flex-direction: column;
     flex: 3;
     margin-top: 30px;
+    width: 100%
 }
 .button_modal{
     margin:0 0 10px 0;
