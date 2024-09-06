@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+    <h1>Kiểm tra từ đối xứng</h1>
+    <input type="text" id="inputText" placeholder="Nhập từ cần kiểm tra">
+    <button onclick="kiemTraDoiXung()">Kiểm tra</button>
+
+    <script>
+        kiemTraDoiXung = () => {
+            let input = document.getElementById('inputText').value;
+            let arr = input.split('');
+            let i = 0;
+            let j = arr.length - 1;
+            let check = false;
+            for(i ; i < j ; i++){
+                for(j ; j > i ; j--)
+                {
+                    if(arr[i] != arr[j])
+                    {
+                        check = false;
+                        break;
+                    }
+                    else
+                    {
+                        check = true;
+                    }
+                }
+            }
+            if (check == true)
+            {
+                alert('Từ đối xứng');
+            }
+            else
+            {
+                alert('Từ không đối xứng');
+            }
+        }
+    </script>
+</body>
+</html>
