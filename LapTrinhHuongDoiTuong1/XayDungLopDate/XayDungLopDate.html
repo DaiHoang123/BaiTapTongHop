@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây Dựng Lớp Date</title>
+</head>
+
+<body>
+
+    <input type="number" id="day" placeholder="Nhập ngày">
+    <input type="number" id="month" placeholder="Nhập tháng">
+    <input type="number" id="year" placeholder="Nhập năm">
+    <button onclick="getInput()">Nhập</button>
+    <br>
+    <br>
+    <div style="font-weight: 700;font-size: 20px;">Ngày tháng năm đã nhập:</div>
+    <div id="result"></div>
+    <br>
+    <button onclick="myDateIns.showDay()">Hiện ngày</button>
+    <div id="showDay">...</div>
+    <br>
+    <button onclick="myDateIns.showMonth()">Hiện tháng</button>
+    <div id="showMonth">...</div>
+    <br>
+    <button onclick="myDateIns.showYear()">Hiện Năm</button>
+    <div id="showYear">...</div>
+
+    <script>
+        class myDate {
+            constructor(day, month, year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            getDay = () => {
+                return this.day
+            };
+            getMonth = () => {
+                return this.month
+            };
+            getYear = () => {
+                return this.year
+            };  
+            setDay = (day) => {
+                this.day = day
+            };
+            setMonth = (month) => {
+                this.month = month
+            };
+            setYear = (year) => {
+                this.year = year
+            };
+
+            showDay = () => {
+                let checkDay = myDateIns.getDay()
+                checkDay !== 0 
+                    ? document.getElementById("showDay").innerHTML = `Ngày: ${checkDay}`
+                    : document.getElementById("showDay").innerHTML = `Chưa nhập ngày`
+            };
+
+            showMonth = () => {
+                let checkMonth = myDateIns.getMonth()
+                checkMonth !== 0 
+                    ? document.getElementById("showMonth").innerHTML = `Tháng: ${checkMonth}`
+                    : document.getElementById("showMonth").innerHTML = `Chưa nhập tháng`
+            };
+
+            showYear = () => {
+            let checkYear = myDateIns.getYear()
+            checkYear != 0
+                ? document.getElementById("showYear").innerHTML = `Năm: ${checkYear}`
+                : document.getElementById("showYear").innerHTML = `Chưa nhập năm`
+            
+            };
+        }
+
+        function getInput () {
+            let inputDay = Math.trunc(document.getElementById("day").value*1);
+            let inputMonth = Math.trunc(document.getElementById("month").value*1);
+            let inputYear = Math.trunc(document.getElementById("year").value*1);
+            myDateIns.setDay(inputDay)
+            myDateIns.setMonth(inputMonth)
+            myDateIns.setYear(inputYear)
+            document.getElementById("result").innerHTML = `Đã nhập: ${myDateIns.day}/${myDateIns.month}/${myDateIns.year}`
+        }
+
+        let myDateIns = new myDate(1,1,1990);
+        document.getElementById("result").innerHTML = `Mặc định: ${myDateIns.day}/${myDateIns.month}/${myDateIns.year}`
+    </script>
+</body>
+
+</html>

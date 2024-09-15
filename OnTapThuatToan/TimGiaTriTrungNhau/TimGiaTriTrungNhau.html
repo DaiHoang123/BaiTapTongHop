@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng số thân thiết</title>
+</head>
+<body>
+    <input type="number" id="Num1" placeholder="Nhập số thứ nhất">
+    <input type="number" id="Num2" placeholder="Nhập số thứ nhất">
+    <br>
+    <button onclick="soSanh()">So Sánh</button>
+    <div id="tongUoc1"></div>
+    <div id="tongUoc2"></div>
+    <div id="ketQua"></div>
+
+    <script>
+
+        function tinhTongUoc(num) {
+            let tongUoc = 0;
+            for (let i = 1; i <= num; i++) {
+                if (num % i === 0) {
+                    tongUoc += i;
+                }
+            }
+            return tongUoc;
+        }
+
+        soSanh = () => {
+            let Num1 = document.getElementById("Num1").value*1;
+            let Num2 = document.getElementById("Num2").value*1;
+            let check = false;
+            let tongUoc1 = tinhTongUoc(Num1);
+            document.getElementById("tongUoc1").innerHTML = `Tổng Ước 1: ${tongUoc1}`;
+            let tongUoc2 = tinhTongUoc(Num2);
+            document.getElementById("tongUoc2").innerHTML = `Tổng Ước 2: ${tongUoc2}`;
+            if (tongUoc1 - Num1 == Num2 && tongUoc2 - Num2 == Num1)
+            {
+                document.getElementById("ketQua").innerHTML = `Hai số đã nhập là số thân thiết`;
+            }
+            else
+            {
+                document.getElementById("ketQua").innerHTML = `Hai số đã nhập không phải là số thân thiết`;
+            }
+        }
+
+    </script>
+</body>
+</html>
