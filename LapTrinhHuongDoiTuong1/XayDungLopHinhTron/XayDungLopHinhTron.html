@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp Hình Tròn</title>
+</head>
+<body>
+    <input type="number" id="radius" placeholder="Nhập bán kính" value=0>
+    <input type="text" id="color" placeholder="Nhập màu" value="No color">
+    <button onclick="getInput()">Nhập</button>
+    <br>
+    <br>
+    <div style="display: flex;">
+        <div>Bán kính hình tròn:</div>
+        <div id="circle_radius" style="margin-left: 10px;"></div>
+    </div>
+    <div style="display: flex;">
+        <div>Diện tích hình tròn:</div>
+        <div id="circle_area" style="margin-left: 10px;"></div>
+    </div>
+    <div style="display: flex;">
+        <div>Màu của hình tròn:</div>
+        <div id="circle_color" style="margin-left: 10px;"></div>
+    </div>
+
+    <script>
+        class circle{
+            constructor(radius,color){
+                this.radius = radius,
+                this.color = color
+            }
+
+            getRadius = () => {
+                return this.radius
+            }
+
+            getArea = () => {
+                return Math.PI * this.radius * this.radius
+            }
+
+            getColor = () => {
+                return this.color
+            }
+        }
+
+        function getInput() {
+            let inputRadius = document.getElementById("radius").value;
+            let inputColor = document.getElementById("color").value;
+            Circle = new circle(inputRadius,inputColor)
+            document.getElementById("circle_radius").innerHTML = Circle.getRadius()
+            document.getElementById("circle_area").innerHTML = Circle.getArea().toFixed(2)
+            document.getElementById("circle_color").innerHTML = Circle.getColor()
+        }
+
+        let Circle;
+    </script>
+</body>
+</html>
