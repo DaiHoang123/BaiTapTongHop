@@ -26,7 +26,7 @@ function listiPhone() {
     document.getElementById("output").innerHTML = result
 }
 
-function listPhone(arrPhone) {
+function listPhone(arrPhone,currentPhone) {
     let listLength = arrPhone.length
     let result = ''
     for (let i = 0; i < listLength; i++) {
@@ -76,6 +76,8 @@ function listPhone(arrPhone) {
     }
     result += '</div>'
     document.getElementById("output").innerHTML = result
+    currentList = currentPhone
+    console.log(currentPhone)
 }
 
 let iPhoneList = [
@@ -129,8 +131,16 @@ function closeModal() {
     document.getElementById("cart_modal").style.display = `none`;
 }
 
+function closeModalNew() {
+    document.getElementById("new_modal").style.display = `none`;
+}
+
 function openModal() {
     document.getElementById("cart_modal").style.display = `flex`;
+}
+
+function openModalNew() {
+    document.getElementById("new_modal").style.display = `flex`;
 }
 
 function addQuantity(element, price) {
@@ -202,9 +212,70 @@ function removeCartItem(name) {
     displayCart();
 }
 
+function addNew() {
+    let phoneTitle = document.getElementById("titlePhoneList").value
+    let phoneName = document.getElementById("phoneName").value
+    let phonePrice = document.getElementById("phonePrice").value
+    let inven = document.getElementById("inventory").value
+    let img = ''
+    switch (phoneTitle){
+        case 'iPhoneList':
+            img = './assets/image/iphone.webp'
+            break;
+        case 'SamsungList':
+            img = './assets/image/samsung.webp'
+            break;
+        default:
+            img = './assets/image/pixel.webp'
+    }
+    if(phoneName == '')
+    {
+        alert("Vui lòng nhập tên sản phẩm")
+    }
+    else if(phonePrice == '')
+    {
+        alert("Vui lòng nhập giá sản phẩm")
+    }
+    else if(inven == '')
+    {
+        alert("Vui lòng nhập số lượng tồn kho")
+    }
+    else
+    {
+        if(phoneTitle == 'iPhoneList')
+        {
+            let index = iPhoneList.length
+            iPhoneList.push(new phone(phoneName,img,phonePrice,inven,index))
+            if(currentList == 'iphone')
+            {
+                listPhone(iPhoneList,'iphone') 
+            }
+        }
+        else if(phoneTitle == 'SamsungList')
+        {
+            let index = iPhoneList.length
+            SamsungList.push(new phone(phoneName,img,phonePrice,inven,index))
+            if(currentList == 'samsung')
+            {
+                listPhone(SamsungList,'samsung') 
+            }
+        }
+        else
+        {
+            let index = iPhoneList.length
+            PixelList.push(new phone(phoneName,img,phonePrice,inven,index))
+            if(currentList == 'pixel')
+            {
+                listPhone(PixelList,'pixel')
+            }
+        }
+    }
+}
+
 let cart = [
 ]
 
+let currentList = 'iphone'
 let cartCount = 0;
-listPhone(iPhoneList);
+listPhone(iPhoneList,'iphone');
 displayCart();
